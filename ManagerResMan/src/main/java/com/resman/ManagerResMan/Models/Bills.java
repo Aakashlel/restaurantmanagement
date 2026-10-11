@@ -11,60 +11,60 @@ public class Bills {
 	
 	@Column(name="ID")
 	@Id
-	int id;
+	int billID;
 	@Column(name="DishName")
-	String DishName;
+	String dishName;
 	@Column(name="Price")
-	int Price;
+	int price;
 	@Column(name="Discount")
-	int Discount=0;
+	int discount=0;
 	@Column(name="Quantity")
-	int Quantity;
+	int quantity;
+	public int getBillID() {
+		return billID;
+	}
+	public void setBillID(int billID) {
+		this.billID = billID;
+	}
+	public String getDishName() {
+		return dishName;
+	}
+	public void setDishName(String dishName) {
+		this.dishName = dishName;
+	}
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	public int getDiscount() {
+		return discount;
+	}
+	public void setDiscount(int discount) {
+		this.discount = discount;
+	}
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
 	@Override
 	public String toString() {
-		return "Bills [id=" + id + ", DishName=" + DishName + ", Price=" + Price + ", Discount=" + Discount
-				+ ", Quantity=" + Quantity + "]";
+		return "Bills [billID=" + billID + ", dishName=" + dishName + ", price=" + price + ", discount=" + discount
+				+ ", quantity=" + quantity + "]";
 	}
-	public Bills(int id, String dishName, int price, int discount, int quantity) {
+	public Bills(int billID, String dishName, int price, int discount, int quantity) {
 		super();
-		this.id = id;
-		DishName = dishName;
-		Price = price;
-		Discount = discount;
-		Quantity = quantity;
+		this.billID = billID;
+		this.dishName = dishName;
+		this.price = price;
+		this.discount = discount;
+		this.quantity = quantity;
 	}
 	public Bills() {
 		super();
 	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getDishName() {
-		return DishName;
-	}
-	public void setDishName(String dishName) {
-		DishName = dishName;
-	}
-	public int getPrice() {
-		return Price;
-	}
-	public void setPrice(int price) {
-		Price = price;
-	}
-	public int getDiscount() {
-		return Discount;
-	}
-	public void setDiscount(int discount) {
-		Discount = discount;
-	}
-	public int getQuantity() {
-		return Quantity;
-	}
-	public void setQuantity(int quantity) {
-		Quantity = quantity;
-	}
-
+	
 }

@@ -13,7 +13,7 @@ public class ReservationDTO {
 	private LocalTime timeSlot;
 	@JsonFormat(pattern = "HH:mm:ss")
 	private LocalTime timeIn;
-	private char Status;
+	private char status;
 	public ReservationDTO() {
 		super();
 	}
@@ -26,7 +26,7 @@ public class ReservationDTO {
 		this.count = count;
 		this.timeSlot = timeSlot;
 		this.timeIn = timeIn;
-		Status = status;
+		this.status = status;
 	}
 	public int getReservationID() {
 		return reservationID;
@@ -65,16 +65,16 @@ public class ReservationDTO {
 		this.timeIn = timeIn;
 	}
 	public char getStatus() {
-		return Status;
+		return status;
 	}
 	public void setStatus(char status) {
-		Status = status;
+		this.status = status;
 	}
 
 	@Override
 	public String toString() {
 		return "ReservationDTO [reservationID=" + reservationID + ", custName=" + custName + ", branch=" + branch
-				+ ", count=" + count + ", timeSlot=" + timeSlot + ", timeIn=" + timeIn + ", Status=" + Status
+				+ ", count=" + count + ", timeSlot=" + timeSlot + ", timeIn=" + timeIn + ", Status=" + status
 				+  "]";
 	}
 }

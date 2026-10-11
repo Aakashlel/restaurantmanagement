@@ -4,9 +4,9 @@ public class BillsDTO {
 
 	private int billID;
 	private int dishName;
-	private int Price;
-	private int Discount=0;
-	private int Quantity;
+	private int price;
+	private int discount=0;
+	private int quantity;
 	public BillsDTO() {
 		super();
 	}
@@ -14,9 +14,9 @@ public class BillsDTO {
 		super();
 		this.billID = billID;
 		this.dishName = dishName;
-		Price = price;
-		Discount = discount;
-		Quantity = quantity;
+		this.price = price;
+		this.discount = discount;
+		this.quantity = quantity;
 	}
 	public int getBillID() {
 		return billID;
@@ -31,27 +31,27 @@ public class BillsDTO {
 		this.dishName = dishName;
 	}
 	public int getPrice() {
-		return Price;
+		return price;
 	}
 	public void setPrice(int price) {
-		Price = price;
+		this.price = price;
 	}
 	public int getDiscount() {
-		return Discount;
+		return this.discount;
 	}
 	public void setDiscount(int discount) {
-		Discount = discount;
+		this.discount = discount;
 	}
 	public int getQuantity() {
-		return Quantity;
+		return quantity;
 	}
 	public void setQuantity(int quantity) {
-		Quantity = quantity;
+		this.quantity = quantity;
 	}
 	@Override
 	public String toString() {
-		return "BillsDTO [billID=" + billID + ", dishName=" + dishName + ", Price=" + Price + ", Discount=" + Discount
-				+ ", Quantity=" + Quantity + "]";
+		return "BillsDTO [billID=" + billID + ", dishName=" + dishName + ", Price=" + price + ", Discount=" + discount
+				+ ", Quantity=" + quantity + "]";
 	}
 	
 }

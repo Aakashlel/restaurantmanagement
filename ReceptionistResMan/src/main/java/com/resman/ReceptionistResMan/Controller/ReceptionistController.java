@@ -37,9 +37,10 @@ public class ReceptionistController {
 		rs.makeReservation(reservation);
 		return;
 	}
+	
 	@Enumerated(EnumType.STRING)
 	@GetMapping("/reservation/{branch}")
-	public List<ReservationDTO> viewReservation(Branches branch){
+	public List<ReservationDTO> viewReservation(@PathVariable Branches branch){
 		return rs.viewReservation(branch);
 	}
 	@DeleteMapping("/reservation")

@@ -2,47 +2,48 @@ package com.ResManCommon.ResCommon;
 
 public class OrderDTO {
 
-	private int OrderID;
-	private String DishName;
-	private int Quantity;
-	private char Status;
-	@Override
-	public String toString() {
-		return "OrderDTO [OrderID=" + OrderID + ", DishName=" + DishName + ", Quantity=" + Quantity + ", Status="
-				+ Status + "]";
-	}
+	private int orderID;
+	private String dishName;
+	private int quantity;
+	private char status;
 	public int getOrderID() {
-		return OrderID;
+		return orderID;
 	}
 	public void setOrderID(int orderID) {
-		OrderID = orderID;
+		this.orderID = orderID;
 	}
 	public String getDishName() {
-		return DishName;
+		return dishName;
 	}
 	public void setDishName(String dishName) {
-		DishName = dishName;
+		this.dishName = dishName;
 	}
 	public int getQuantity() {
-		return Quantity;
+		return quantity;
 	}
 	public void setQuantity(int quantity) {
-		Quantity = quantity;
+		this.quantity = quantity;
 	}
 	public char getStatus() {
-		return Status;
+		return status;
 	}
 	public void setStatus(char status) {
-		Status = status;
+		this.status = status;
+	}
+	@Override
+	public String toString() {
+		return "OrderDTO [orderID=" + orderID + ", dishName=" + dishName + ", quantity=" + quantity + ", status="
+				+ status + "]";
 	}
 	public OrderDTO(int orderID, String dishName, int quantity, char status) {
 		super();
-		OrderID = orderID;
-		DishName = dishName;
-		Quantity = quantity;
-		Status = status;
+		this.orderID = orderID;
+		this.dishName = dishName;
+		this.quantity = quantity;
+		this.status = status;
 	}
 	public OrderDTO() {
 		super();
 	}
+	
 }

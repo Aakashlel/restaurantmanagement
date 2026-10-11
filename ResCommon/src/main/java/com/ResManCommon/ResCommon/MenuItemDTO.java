@@ -2,33 +2,38 @@ package com.ResManCommon.ResCommon;
 
 public class MenuItemDTO {
 
-	private int DishID;
-	private String DishName;
+	private int dishID;
+	private String dishName;
 	private int price;
-	private String FoodType;
-	private Branches Branch;
+	private String foodType;
+	private Branches branch;
 	public MenuItemDTO() {
 		super();
 	}
 	public MenuItemDTO(int dishID, String dishName, int price, String foodType, Branches branch) {
 		super();
-		DishID = dishID;
-		DishName = dishName;
+		this.dishID = dishID;
+		this.dishName = dishName;
 		this.price = price;
-		FoodType = foodType;
-		Branch = branch;
+		this.foodType = foodType;
+		this.branch = branch;
+	}
+	@Override
+	public String toString() {
+		return "MenuItemDTO [dishID=" + dishID + ", dishName=" + dishName + ", price=" + price + ", foodType="
+				+ foodType + ", branch=" + branch + "]";
 	}
 	public int getDishID() {
-		return DishID;
+		return dishID;
 	}
 	public void setDishID(int dishID) {
-		DishID = dishID;
+		this.dishID = dishID;
 	}
 	public String getDishName() {
-		return DishName;
+		return dishName;
 	}
 	public void setDishName(String dishName) {
-		DishName = dishName;
+		this.dishName = dishName;
 	}
 	public int getPrice() {
 		return price;
@@ -37,21 +42,16 @@ public class MenuItemDTO {
 		this.price = price;
 	}
 	public String getFoodType() {
-		return FoodType;
+		return foodType;
 	}
 	public void setFoodType(String foodType) {
-		FoodType = foodType;
+		this.foodType = foodType;
 	}
 	public Branches getBranch() {
-		return Branch;
+		return branch;
 	}
 	public void setBranch(Branches branch) {
-		Branch = branch;
-	}
-	@Override
-	public String toString() {
-		return "MenuItemDTO [DishID=" + DishID + ", DishName=" + DishName + ", price=" + price + ", FoodType="
-				+ FoodType + ", Branch=" + Branch + "]";
+		this.branch = branch;
 	}
 	
 }

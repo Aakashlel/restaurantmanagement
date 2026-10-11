@@ -85,6 +85,7 @@ public class ReceptionistService {
 		return table;
 	}
 	
+	@Enumerated(EnumType.STRING)
 	public List<ReservationDTO> viewReservation(Branches branch) {
 		List<Reservation> res=reservationRepo.findByBranch(branch);
 		List<ReservationDTO> resdto=new ArrayList<ReservationDTO>();
@@ -106,7 +107,7 @@ public class ReceptionistService {
 	public void deleteById(int id) {
 
 		Reservation r=reservationRepo.findById(id).get();
-		int count=r.getNumCustomers();
+		int count=r.getCount();
 		List<Integer> tables=getRequired(count);
 		Seating s=seatingRepo.findByBranch(r.getBranch());
 		for(int table:tables) {

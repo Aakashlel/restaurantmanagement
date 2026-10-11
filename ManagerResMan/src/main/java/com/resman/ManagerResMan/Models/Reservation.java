@@ -3,6 +3,7 @@ package com.resman.ManagerResMan.Models;
 import java.time.LocalTime;
 
 import com.ResManCommon.ResCommon.Branches;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -18,17 +19,32 @@ public class Reservation {
 	@Column(name="ReservationID")
 	@Id
 	int reservationID;
+	@Column(name="CustomerName")
+	String custName;
+	@Enumerated(EnumType.STRING)
+	@Column(name="Branch")
+	Branches branch;
+	@Column(name="NumCustomers")
+	int count;
+	@JsonFormat(pattern = "HH:mm:ss")
+	@Column(name="TimeSlot")
+	LocalTime timeSlot;
+	@JsonFormat(pattern = "HH:mm:ss")
+	@Column(name="TimeIn")
+	LocalTime timeIn;
+	@Column(name="Status")
+	char status;
 	public int getReservationID() {
 		return reservationID;
 	}
 	public void setReservationID(int reservationID) {
 		this.reservationID = reservationID;
 	}
-	public String getCustomerName() {
-		return customerName;
+	public String getCustName() {
+		return custName;
 	}
-	public void setCustomerName(String customerName) {
-		this.customerName = customerName;
+	public void setCustName(String custName) {
+		this.custName = custName;
 	}
 	public Branches getBranch() {
 		return branch;
@@ -36,11 +52,11 @@ public class Reservation {
 	public void setBranch(Branches branch) {
 		this.branch = branch;
 	}
-	public int getNumCustomers() {
-		return numCustomers;
+	public int getCount() {
+		return count;
 	}
-	public void setNumCustomers(int numCustomers) {
-		this.numCustomers = numCustomers;
+	public void setCount(int count) {
+		this.count = count;
 	}
 	public LocalTime getTimeSlot() {
 		return timeSlot;
@@ -60,37 +76,24 @@ public class Reservation {
 	public void setStatus(char status) {
 		this.status = status;
 	}
-	@Column(name="CustomerName")
-	String customerName;
-	@Enumerated(EnumType.STRING)
-	@Column(name="Branch")
-	Branches branch;
-	@Column(name="NumCustomers")
-	int numCustomers;
-	@Column(name="TimeSlot")
-	LocalTime timeSlot;
-	@Column(name="TimeIn")
-	LocalTime timeIn;
-	@Column(name="Status")
-	char status;
-	@Override
-	public String toString() {
-		return "Reservation [reservationID=" + reservationID + ", customerName=" + customerName + ", branch=" + branch
-				+ ", numCustomers=" + numCustomers + ", timeSlot=" + timeSlot + ", timeIn=" + timeIn + ", status="
-				+ status + "]";
-	}
-	public Reservation() {
-		super();
-	}
-	public Reservation(int reservationID, String customerName, Branches branch, int numCustomers, LocalTime timeSlot,
+	public Reservation(int reservationID, String custName, Branches branch, int count, LocalTime timeSlot,
 			LocalTime timeIn, char status) {
 		super();
 		this.reservationID = reservationID;
-		this.customerName = customerName;
+		this.custName = custName;
 		this.branch = branch;
-		this.numCustomers = numCustomers;
+		this.count = count;
 		this.timeSlot = timeSlot;
 		this.timeIn = timeIn;
 		this.status = status;
 	}
+	public Reservation() {
+		super();
+	}
+	@Override
+	public String toString() {
+		return "Reservation [reservationID=" + reservationID + ", custName=" + custName + ", branch=" + branch
+				+ ", count=" + count + ", timeSlot=" + timeSlot + ", timeIn=" + timeIn + ", Status=" + status + "]";
+	}
+	
 }

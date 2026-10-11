@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.resman</groupId>
 	<artifactId>WaiterResMan</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<name/>
 	<description/>
 	<url/>
@@ -33,7 +33,7 @@
 		<dependency>
 			<groupId>com.ResManCommon</groupId>
 			<artifactId>ResCommon</artifactId>
-			<version>0.0.2-SNAPSHOT</version>
+			<version>0.0.3-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -46,7 +46,12 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
-	</dependencies>
+		<dependency>
+			<groupId>com.resman</groupId>
+			<artifactId>ManagerResMan</artifactId>
+			<version>0.0.3-SNAPSHOT</version>
+		</dependency>
+</dependencies>
 
 	<build>
 		<plugins>

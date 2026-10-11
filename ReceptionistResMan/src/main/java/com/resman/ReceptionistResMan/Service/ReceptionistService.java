@@ -34,7 +34,8 @@ public class ReceptionistService {
 	}
 
 	public List<ReservationDTO> viewReservation(Branches branch) {
-		ResponseEntity<ReservationDTO[]> response= restTemplate.getForEntity(ManagerURL+"/"+branch,ReservationDTO[].class);
+		System.out.println(branch);
+		ResponseEntity<ReservationDTO[]> response= restTemplate.getForEntity(ManagerURL+"/reservation/"+String.valueOf(branch),ReservationDTO[].class);
 		return Arrays.asList(response.getBody());
 	}
 	public ReservationDTO cancelReservation(int id) {
@@ -47,7 +48,7 @@ public class ReceptionistService {
 		return "occupied";
 	}
 	public String freeTable(int id) {
-		restTemplate.delete(ManagerURL+"/free",id);
+		restTemplate.delete(ManagerURL+"/free?id="+id);
 		return "freed";
 	}
 }
